@@ -9,7 +9,9 @@ const Header: React.FC = () => {
         <Logo />
       </a>
       <nav className="hidden sm:flex gap-3 md:gap-6">
-        <a href="/">Home</a>
+        <a className="text-[#F15025] border-b border-[#F15025]" href="/">
+          Home
+        </a>
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
       </nav>

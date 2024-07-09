@@ -4,6 +4,8 @@ import Paypal from '../assets/icons/paypal.svg?react';
 import Visa from '../assets/icons/visa.svg?react';
 import Location from '../assets/icons/location.svg?react';
 import Home from '../assets/icons/home.svg?react';
+import Edit from '../assets/icons/edit.svg?react';
+import Cancel from '../assets/icons/cancel.svg?react';
 import { menCollection } from '../constants';
 
 const product = menCollection[0].products[0];
@@ -11,7 +13,7 @@ const product = menCollection[0].products[0];
 const Payment: React.FC = () => {
   return (
     <section className="max-width">
-      <h2 className="font-bold text-2xl my-2 sm:my-4 md:my-6">My Cart</h2>
+      <h2 className="font-bold text-2xl my-2 sm:my-4 md:my-6">Payment</h2>
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex flex-1 p-4 gap-2">
           <div className="">
@@ -78,6 +80,27 @@ const Payment: React.FC = () => {
               <Home width={20} height={20} />
               <span className="text-[#F15025]">Home Address</span>
             </div>
+
+            <div className="">
+              <div className="flex items-start justify-between">
+                <label
+                  className="flex items-center mr-3 gap-2 text-nowrap"
+                  htmlFor=""
+                >
+                  <input type="radio" name="address-option" id="" />
+                  No 1, Aso Rock Villa, Abuja
+                </label>
+                <Cancel width={15} height={15} />
+              </div>
+
+              <div className="flex items-start justify-between">
+                <label className="flex items-center mr-3 gap-2" htmlFor="">
+                  <input type="radio" name="address-option" id="" />
+                  New Address
+                </label>
+                <Edit width={15} height={15} />
+              </div>
+            </div>
           </div>
           <div className="flex-1 py-4 px-2 rounded-md text-sm leading-loose">
             <div className="flex items-center justify-between mt-2 border-b">
@@ -102,7 +125,6 @@ const Payment: React.FC = () => {
           </div>
         </div>
       </div>
-      ;
     </section>
   );
 };
