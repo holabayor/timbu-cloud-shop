@@ -7,13 +7,13 @@ import ProductSlider from './ProductSlider';
 const CollectionList: React.FC = () => {
   return (
     <section className="max-width my-4">
+      <h3 className="max-sm:text-center font-medium text-base sm:text-lg md:text-xl my-2 sm:my-4">
+        Men Collections
+      </h3>
       {menCollection.map((collection) => (
         <>
-          <h3 className="max-sm:text-center font-medium text-base sm:text-lg md:text-xl my-2 sm:my-4">
-            Men Collections
-          </h3>
-          <div className="flex items-center justify-between my-2 md:my-3">
-            <h4 className="bg-[#FFF0EC] font-medium sm:text-xl px-2 py-1 sm:py-2 rounded-sm">
+          <div className="flex items-center justify-between my-2 md:my-4">
+            <h4 className="bg-[#FFF0EC] text-[#862208] font-medium sm:text-xl px-2 py-1 sm:py-2 rounded-sm">
               {collection.category}
             </h4>
             <span>
@@ -28,7 +28,7 @@ const CollectionList: React.FC = () => {
           <ProductSlider>
             {collection.products.map((product) => (
               <ProductCard
-                key={product.name}
+                key={product.id}
                 name={product.name}
                 imageUrl={product.imageUrl}
                 price={product.price}

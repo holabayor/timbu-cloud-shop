@@ -11,11 +11,11 @@ const Hero: React.FC = () => {
             <br className="hidden md:block" />
             and Abides
           </h1>
-          <p className="my-4 w-[320px] max-sm:w-[80%]">
+          <p className="max-sm:text-sm my-4 w-[320px] max-sm:w-[80%]">
             Our curated collection of high-quality clothing is designed to make
             you look and feel your best.
           </p>
-          <button className="sm:self-start bg-[#F15025] max-sm:w-[80%] max-sm:text-sm py-3 px-4 rounded-md text-white">
+          <button className="font-medium sm:self-start bg-[#F15025] max-sm:w-[75%] max-sm:text-sm py-3 px-4 rounded-md text-white">
             Shop the Collection
           </button>
         </div>
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <div
-        className="flex px-2 sm:px-4 md:px-6 items-center justify-between h-6 sm:h-8 md:h-16 w-full bg-[#151515] font-semibold uppercase text-[8px] text-[#E6E8E6]
+        className="flex px-2 sm:px-4 md:px-6 items-center justify-between h-6 sm:h-8 md:h-12 w-full bg-[#151515] font-semibold uppercase text-[8px] text-[#E6E8E6]
 "
       >
         <span>450+ kind of loosef tea</span>
