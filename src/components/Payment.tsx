@@ -17,47 +17,64 @@ const Payment: React.FC = () => {
           <div className="">
             <div className="flex items-center">
               <input type="radio" name="payment-option" id="" />
-              <label className="flex ml-5 gap-2" htmlFor="">
-                <Mastercard width={30} height={30} /> Master card
+              <label
+                className="flex items-center ml-5 gap-2 text-nowrap"
+                htmlFor=""
+              >
+                <Mastercard width={40} height={40} /> Master card
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input type="radio" name="payment-option" id="" />
+              <label className="flex items-center ml-5 gap-2" htmlFor="">
+                <Visa width={40} height={40} /> Visa
               </label>
             </div>
 
             <div className="flex items-center">
               <input type="radio" name="payment-option" id="" />
               <label className="flex ml-5 gap-2" htmlFor="">
-                <Visa width={25} height={25} /> Visa
-              </label>
-            </div>
-
-            <div className="flex items-center">
-              <input type="radio" name="payment-option" id="" />
-              <label className="flex ml-5 gap-2" htmlFor="">
-                <Paypal width={30} height={30} />
+                <Paypal width={50} height={50} />
               </label>
             </div>
           </div>
         </div>
-        <div className="">
-          <div className="bg-[#CED0CE] flex-1 py-4 px-8 rounded-md text-sm leading-loose">
-            <div className="flex items-center">
+        <div className="flex-1 max-w-[450px]">
+          <div className="bg-[#E6E8E6] flex-1 py-4 px-8 rounded-md text-sm leading-loose space-y-4">
+            <div className="flex items-center gap-2">
               <Location width={20} height={20} />
               <span className="text-[#F15025]">Pick up address</span>
             </div>
             <div className="flex flex-col">
               <label htmlFor="address">Address</label>
-              <input className="rounded-md" type="text" name="address" />
+              <input
+                className="bg-[#CED0CE] h-10 rounded-md"
+                type="text"
+                name="address"
+              />
             </div>
-            <div className="">
-              <div className="flex flex-col">
-                <label htmlFor="postal">Postal Code</label>
-                <input className="rounded-md" type="text" name="postal" />
+            <div className="flex gap-4">
+              <div className="flex-1 flex-col">
+                <label htmlFor="postal" className="text-nowrap">
+                  Postal Code
+                </label>
+                <input
+                  className="w-full h-10 bg-[#CED0CE] rounded-md"
+                  type="text"
+                  name="postal"
+                />
               </div>
-              <div className="flex flex-col">
-                <label htmlFor="address">Address</label>
-                <input className="rounded-md" type="text" name="address" />
+              <div className="flex-1 flex-col">
+                <label htmlFor="address">City</label>
+                <input
+                  className="w-full h-10 bg-[#CED0CE] rounded-md"
+                  type="text"
+                  name="address"
+                />
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <Home width={20} height={20} />
               <span className="text-[#F15025]">Home Address</span>
             </div>
@@ -79,7 +96,7 @@ const Payment: React.FC = () => {
               <span>Total</span>
               <span>£37.97</span>
             </div>
-            <button className="w-full font-medium  bg-[#F15025] max-sm:text-sm py-[6px] rounded-md text-white my-4">
+            <button className="w-full font-medium  bg-[#E6E8E6] max-sm:text-sm py-[6px] rounded-md my-4">
               Confirm Payment
             </button>
           </div>
