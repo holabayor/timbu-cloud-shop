@@ -2,9 +2,15 @@ import React from 'react';
 import Logo from './Logo';
 import CartIcon from '../assets/icons/cart-basket.svg?react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/cartContext';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { cart } = useCart();
+
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+  console.log('Total items ', totalItems);
 
   const handleCartClick = () => {
     navigate('/cart');
@@ -12,9 +18,8 @@ const Header: React.FC = () => {
 
   return (
     <header className="max-width flex items-center justify-between py-4 md:py-6">
-      <a href="/">
-        <Logo />
-      </a>
+      <Logo />
+
       <nav className="hidden sm:flex gap-3 md:gap-6">
         <a className="text-[#F15025] border-b border-[#F15025]" href="/">
           Home
@@ -22,12 +27,19 @@ const Header: React.FC = () => {
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
       </nav>
-      <CartIcon
-        width={30}
-        height={30}
-        className="cursor-pointer"
-        onClick={handleCartClick}
-      />
+      <div className="relative">
+        <CartIcon
+          width={30}
+          height={30}
+          className="cursor-pointer"
+          onClick={handleCartClick}
+        />
+        {totalItems > 0 && (
+          <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+            {totalItems}
+          </span>
+        )}
+      </div>
     </header>
   );
 };

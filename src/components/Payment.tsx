@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../context/cartContext';
 import React from 'react';
 import Mastercard from '../assets/icons/mastercard.svg?react';
 import Paypal from '../assets/icons/paypal.svg?react';
@@ -7,13 +9,15 @@ import Home from '../assets/icons/home.svg?react';
 import Edit from '../assets/icons/edit.svg?react';
 import Cancel from '../assets/icons/cancel.svg?react';
 
-const product = {
-  name: 'Men’s Casual Slim Fit',
-  price: 32.99,
-  imageUrl: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
-};
-
 const Payment: React.FC = () => {
+  const { clearCart, getSubtotal, getTotal } = useCart();
+  const navigate = useNavigate();
+
+  const handlePayment = () => {
+    clearCart();
+    navigate('/receipt');
+  };
+
   return (
     <section className="max-width">
       <h2 className="font-bold text-2xl my-2 sm:my-4 md:my-6">Payment</h2>
@@ -108,7 +112,7 @@ const Payment: React.FC = () => {
           <div className="flex-1 py-4 px-2 rounded-md text-sm leading-loose">
             <div className="flex items-center justify-between mt-2 border-b">
               <span>Subtotal:</span>
-              <span>£{product.price}</span>
+              <span>£{getSubtotal().toFixed(2)}</span>
             </div>
             <div className="flex items-center justify-between mt-2 border-b">
               <span>Tax:</span>
@@ -120,9 +124,12 @@ const Payment: React.FC = () => {
             </div>
             <div className="flex items-center justify-between font-medium text-lg my-2">
               <span>Total</span>
-              <span>£37.97</span>
+              <span>£{getTotal().toFixed(2)}</span>
             </div>
-            <button className="w-full font-medium  bg-[#E6E8E6] max-sm:text-sm py-[6px] rounded-md my-4">
+            <button
+              onClick={handlePayment}
+              className="w-full font-medium  bg-[#E6E8E6] max-sm:text-sm py-[6px] rounded-md my-4"
+            >
               Confirm Payment
             </button>
           </div>

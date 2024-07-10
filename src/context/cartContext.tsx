@@ -19,6 +19,9 @@ interface CartContextProps {
   cart: CartItem[];
   addToCart: (product: Product) => void;
   updateCart: (productId: string, quantity: number) => void;
+  clearCart: () => void;
+  getSubtotal: () => number;
+  getTotal: () => number;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -57,8 +60,28 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({
     );
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const getSubtotal = () => {
+    return cart.reduce(
+      (total, item) => total + parseFloat(item.price) * item.quantity,
+      0
+    );
+  };
+
+  const getTotal = () => {
+    const subtotal = getSubtotal();
+    const taxAmount = 1.99;
+    const deliveryFee = 2.99;
+    return subtotal + taxAmount + deliveryFee;
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, updateCart, clearCart, getSubtotal, getTotal }}
+    >
       {children}
     </CartContext.Provider>
   );
