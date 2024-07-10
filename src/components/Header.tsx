@@ -10,8 +10,6 @@ const Header: React.FC = () => {
 
   const totalItems = cart.length;
 
-  console.log('Total items ', totalItems);
-
   const handleCartClick = () => {
     navigate('/cart');
   };
