@@ -3,7 +3,10 @@ import { useCart } from '../context/cartContext';
 import PdfIcon from '../assets/icons/pdf.svg?react';
 
 const Success: React.FC = () => {
-  const { cart, getSubtotal, getTotal } = useCart();
+  const { cart, clearCart } = useCart();
+
+  // Clear the cart
+  // clearCart();
 
   return (
     <section className="max-width my-6 md:my-12">

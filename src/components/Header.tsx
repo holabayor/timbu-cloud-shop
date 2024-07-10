@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
 
-  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  const totalItems = cart.length;
 
   console.log('Total items ', totalItems);
 

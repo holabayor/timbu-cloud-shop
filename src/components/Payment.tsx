@@ -10,11 +10,10 @@ import Edit from '../assets/icons/edit.svg?react';
 import Cancel from '../assets/icons/cancel.svg?react';
 
 const Payment: React.FC = () => {
-  const { clearCart, getSubtotal, getTotal } = useCart();
+  const { getSubtotal, getTotal } = useCart();
   const navigate = useNavigate();
 
   const handlePayment = () => {
-    clearCart();
     navigate('/receipt');
   };
 

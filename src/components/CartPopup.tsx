@@ -1,11 +1,14 @@
 import React from 'react';
 import { Product } from '../types';
+import { useNavigate } from 'react-router-dom';
 
 interface CartPopupProps {
   product: Product;
 }
 
 const CartPopup: React.FC<CartPopupProps> = ({ product }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="z-10 w-56 flex flex-col bg-white fixed top-16 right-4 md:right-12 border shadow-lg rounded-md text-sm p-6">
       <h6 className="font-semibold text-center mb-4">1 item added</h6>
@@ -23,7 +26,9 @@ const CartPopup: React.FC<CartPopupProps> = ({ product }) => {
           <span>Size: Medium(M)</span>
         </div>
       </div>
-      <button className="btn-cart py-1 my-2">Go to cart</button>
+      <button onClick={() => navigate('/cart')} className="btn-cart py-1 my-2">
+        Go to cart
+      </button>
     </div>
   );
 };

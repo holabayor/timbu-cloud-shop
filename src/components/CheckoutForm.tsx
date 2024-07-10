@@ -3,9 +3,11 @@ import Mastercard from '../assets/icons/mastercard.svg?react';
 import Paypal from '../assets/icons/paypal.svg?react';
 import Visa from '../assets/icons/visa.svg?react';
 import { useCart } from '../context/cartContext';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm: React.FC = () => {
   const { cart, updateCart, getSubtotal, getTotal } = useCart();
+  const navigate = useNavigate();
 
   const taxAmount = 1.99;
   const deliveryFee = 2.99;
@@ -45,6 +47,7 @@ const CheckoutForm: React.FC = () => {
                       Qty{' '}
                       <select
                         name="Qty"
+                        value={product.quantity}
                         id=""
                         onChange={(e) =>
                           updateCart(product.id, parseInt(e.target.value))
@@ -80,7 +83,10 @@ const CheckoutForm: React.FC = () => {
               <span>Total</span>
               <span>£{getTotal().toFixed(2)}</span>
             </div>
-            <button className="w-full font-medium  bg-[#F15025] max-sm:text-sm py-[6px] rounded-md text-white my-4">
+            <button
+              onClick={() => navigate('/payment')}
+              className="w-full font-medium  bg-[#F15025] max-sm:text-sm py-[6px] rounded-md text-white my-4"
+            >
               Check out
             </button>
             <div>
