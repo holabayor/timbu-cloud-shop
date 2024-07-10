@@ -15,7 +15,10 @@ const Hero: React.FC = () => {
             Our curated collection of high-quality clothing is designed to make
             you look and feel your best.
           </p>
-          <button className="font-medium sm:self-start bg-[#F15025] max-sm:w-[75%] max-sm:text-sm py-3 px-4 rounded-md text-white">
+          <button
+            className="font-medium sm:self-start bg-[#F15025] max-sm:w-[75%] max-sm:text-sm py-3 px-4 rounded-md text-white"
+            // onClick={}
+          >
             Shop the Collection
           </button>
         </div>

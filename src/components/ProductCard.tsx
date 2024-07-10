@@ -1,15 +1,31 @@
 import React from 'react';
 import Favourite from '../assets/icons/favorite.svg?react';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductCardProps {
+  id: string;
   name: string;
   imageUrl: string;
   price: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  id,
+  name,
+  imageUrl,
+  price,
+}) => {
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
+  };
+
   return (
-    <div className="relative flex-1 mx-2">
+    <div
+      className="relative flex-1 mx-2 cursor-pointer"
+      onClick={handleProductClick}
+    >
       <div className="rounded-md overflow-hidden text-center">
         <span className="absolute top-0 right-0 bg-[#CED0CE] p-1 sm:p-2 rounded-md">
           <Favourite

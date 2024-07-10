@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             <div className="my-2" key={link.title}>
               <h3 className="uppercase font-semibold mb-2">{link.title}</h3>
               {link.links.map((item) => (
-                <li className="list-none">
+                <li className="list-none" key={item.title}>
                   <a href={item.url}>{item.title}</a>
                 </li>
               ))}

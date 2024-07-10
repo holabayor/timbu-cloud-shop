@@ -1,8 +1,15 @@
 import React from 'react';
 import Logo from './Logo';
-import Cart from '../assets/icons/cart-basket.svg?react';
+import CartIcon from '../assets/icons/cart-basket.svg?react';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate('/cart');
+  };
+
   return (
     <header className="max-width flex items-center justify-between py-4 md:py-6">
       <a href="/">
@@ -15,7 +22,12 @@ const Header: React.FC = () => {
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
       </nav>
-      <Cart width={30} height={30} />
+      <CartIcon
+        width={30}
+        height={30}
+        className="cursor-pointer"
+        onClick={handleCartClick}
+      />
     </header>
   );
 };

@@ -1,9 +1,63 @@
-import React from 'react';
-import { menCollection } from '../constants';
-
-const product = menCollection[0].products[0];
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchProductById } from '../api';
+import { useCart } from '../context/cartContext';
+import CartPopup from './CartPopup';
 
 const ProductDetail: React.FC = () => {
+  const { productId } = useParams<{ productId: string }>();
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showPopup, setShowPopup] = useState(false);
+  const { addToCart } = useCart();
+
+  useEffect(() => {
+    fetchProductById(productId!)
+      .then((product: any) => {
+        setProduct(product);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, [productId]);
+
+  if (loading) {
+    return (
+      <section className="max-width min-h-screen">
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
+  if (!product) {
+    return (
+      <section className="max-width min-h-screen">
+        <p>Product not found.</p>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="max-width min-h-screen">
+        <p>Something went wrong: {error}</p>
+      </section>
+    );
+  }
+
+  const handleAddToCart = () => {
+    if (product) {
+      addToCart(product);
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
+    }
+  };
+
   return (
     <section className="max-width min-h-screen">
       <div className="flex flex-col sm:flex-row w-full gap-8 overflow-clip">
@@ -63,10 +117,11 @@ const ProductDetail: React.FC = () => {
           </div>
           <div>size</div>
           <div>
-            <button>Add to Cart</button>
+            <button onClick={handleAddToCart}>Add to Cart</button>
           </div>
         </div>
       </div>
+      {showPopup && product && <CartPopup product={product} />}
     </section>
   );
 };

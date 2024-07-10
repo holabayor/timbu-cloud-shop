@@ -6,9 +6,12 @@ import Location from '../assets/icons/location.svg?react';
 import Home from '../assets/icons/home.svg?react';
 import Edit from '../assets/icons/edit.svg?react';
 import Cancel from '../assets/icons/cancel.svg?react';
-import { menCollection } from '../constants';
 
-const product = menCollection[0].products[0];
+const product = {
+  name: 'Men’s Casual Slim Fit',
+  price: 32.99,
+  imageUrl: 'https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg',
+};
 
 const Payment: React.FC = () => {
   return (

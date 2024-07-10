@@ -6,19 +6,22 @@ import CheckoutPage from './pages/CheckoutPage.tsx';
 import ProductDetailPage from './pages/ProductDetailPage.tsx';
 import GoToTop from './components/GoToTop.tsx';
 import PaymentPage from './pages/PaymentPage.tsx';
+import { CartProvider } from './context/cartContext.tsx';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/product" element={<ProductDetailPage />} />
-        <Route path="/payment" element={<PaymentPage />} />
-      </Routes>
-      <GoToTop />
-    </Router>
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/checkout/:productId" element={<CheckoutPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/product/:productId" element={<ProductDetailPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
+        </Routes>
+        <GoToTop />
+      </Router>
+    </CartProvider>
   );
 };
 
