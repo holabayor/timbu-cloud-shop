@@ -191,14 +191,14 @@ export const footerLinks = [
   {
     title: 'Collections',
     links: [
-      { title: 'Black teas', url: '#' },
-      { title: 'White teas', url: '#' },
-      { title: 'Herbal teas', url: '#' },
-      { title: 'Matcha', url: '#' },
-      { title: 'Chai', url: '#' },
-      { title: 'Underwear', url: '#' },
-      { title: 'Shirt', url: '#' },
+      { title: 'Shirts', url: '#' },
       { title: 'Sneakers', url: '#' },
+      { title: 'Gown', url: '#' },
+      { title: 'Herbal teas', url: '#' },
+      { title: 'Jewellery', url: '#' },
+      { title: 'Underwear', url: '#' },
+      { title: 'CropTop', url: '#' },
+      { title: 'Accessories', url: '#' },
     ],
   },
   {
