@@ -3,7 +3,7 @@ import { footerLinks } from '../constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#e6e8e6] py-4 sm:py-6 md:py-10">
+    <footer className="bg-[#e6e8e6] py-1">
       <div className="max-width">
         <div className="flex flex-wrap justify-between text-[#282828] text-xs sm:text-sm">
           {footerLinks.map((link) => (

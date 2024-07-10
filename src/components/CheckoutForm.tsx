@@ -11,7 +11,7 @@ const CheckoutForm: React.FC = () => {
   const deliveryFee = 2.99;
 
   return (
-    <section className="max-width">
+    <section className="max-width my-6 md:my-12">
       <h2 className="font-bold text-2xl my-2 sm:my-4 md:my-6">My Cart</h2>
       {cart.length > 0 ? (
         <div className="flex flex-col sm:flex-row gap-4">
@@ -25,11 +25,11 @@ const CheckoutForm: React.FC = () => {
                       src={product.imageUrl}
                       alt={product.name}
                     />
-                    <p className="font-medium text-center mb-2">
+                    <p className="text-sm font-medium text-center mb-2">
                       {product.name}
                     </p>
                   </div>
-                  <div className="w-2/3 text-sm">
+                  <div className="w-2/3 text-xs">
                     <div className="flex items-start justify-between mb-2">
                       <div className="text-[10px]">
                         <p>Delivery: Standard</p>
@@ -49,7 +49,7 @@ const CheckoutForm: React.FC = () => {
                         onChange={(e) =>
                           updateCart(product.id, parseInt(e.target.value))
                         }
-                        className="border-none"
+                        className="border-none focus:border-none focus:outline-none"
                       >
                         {[...Array(10).keys()].map((i) => (
                           <option key={i + 1} value={i + 1}>

@@ -61,9 +61,9 @@ const ProductDetail: React.FC = () => {
   };
 
   return (
-    <section className="max-width min-h-screen">
+    <section className="max-width my-6 md:my-12">
       <div className="flex flex-col sm:flex-row w-full gap-8 overflow-clip">
-        <div className="w-full md:w-1/2 max-sm:flex-row-reverse flex flex-1 gap-1">
+        <div className="w-full sm:w-2/3 md:w-1/2 max-sm:flex-row-reverse flex flex-1 gap-1">
           <div className="w-1/4 flex flex-col gap-1">
             <img
               src={product.imageUrl}
@@ -84,13 +84,13 @@ const ProductDetail: React.FC = () => {
           <img src={product.imageUrl} className="w-3/4 object-contain" alt="" />
         </div>
 
-        <div className="w-full sm:w-1/3 md:w-1/2 flex flex-col">
-          <div>
-            <h1>{product.name}</h1>
+        <div className="w-full sm:w-1/3 md:w-1/2 flex flex-col justify-between py-1">
+          <div className="font-semibold">
+            <h4>{product.name}</h4>
             <p>£{product.price}</p>
           </div>
           <div className="flex gap-3 max-sm:h-48 ">
-            <div className="flex-1">
+            <div className="flex-1 text-xs sm:text-sm">
               <img
                 src={product.imageUrl}
                 className="rounded-sm"
@@ -128,7 +128,7 @@ const ProductDetail: React.FC = () => {
             </select>
             <div className="flex items-center gap-2">
               <button
-                className="btn-cart w-full py-1 md:py-2"
+                className="btn-cart w-full py-2"
                 onClick={handleAddToCart}
               >
                 Add to Cart
@@ -136,13 +136,13 @@ const ProductDetail: React.FC = () => {
               <FavouriteIcon
                 width={40}
                 height={40}
-                className="bg-[#E6E8E6] rounded-sm max-sm:h-8"
+                className="bg-[#E6E8E6] rounded-sm"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full sm:w-1/2 ml-auto space-y-2">
+      <div className="w-full sm:w-2/3 md:w-1/2 ml-auto space-y-1 md:space-y-2 pt-4">
         <h6 className="font-medium">Delivery</h6>
         <div className="bg-[#E6E8E6] p-2 md:p-4 text-xs">
           <div className="flex items-center justify-between">

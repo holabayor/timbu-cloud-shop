@@ -19,7 +19,7 @@ const Payment: React.FC = () => {
   };
 
   return (
-    <section className="max-width">
+    <section className="max-width my-6 md:my-12">
       <h2 className="font-bold text-2xl my-2 sm:my-4 md:my-6">Payment</h2>
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex flex-1 p-4 gap-2">

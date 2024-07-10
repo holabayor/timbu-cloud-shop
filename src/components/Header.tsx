@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="max-width flex items-center justify-between py-4 md:py-6">
+    <header className="max-width flex items-center justify-between py-4 md:py-6 px-4">
       <Logo />
 
       <nav className="hidden sm:flex gap-3 md:gap-6">
@@ -35,7 +35,7 @@ const Header: React.FC = () => {
           onClick={handleCartClick}
         />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+          <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-[10px] w-4 h-4 flex items-center justify-center">
             {totalItems}
           </span>
         )}

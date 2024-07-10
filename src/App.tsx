@@ -7,6 +7,7 @@ import ProductDetailPage from './pages/ProductDetailPage.tsx';
 import GoToTop from './components/GoToTop.tsx';
 import PaymentPage from './pages/PaymentPage.tsx';
 import { CartProvider } from './context/cartContext.tsx';
+import SuccessPage from './pages/SuccessPage.tsx';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/product/:productId" element={<ProductDetailPage />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/print-receipt" element={<SuccessPage />} />
         </Routes>
         <GoToTop />
       </Router>
