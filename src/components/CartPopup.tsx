@@ -7,17 +7,23 @@ interface CartPopupProps {
 
 const CartPopup: React.FC<CartPopupProps> = ({ product }) => {
   return (
-    <div className="fixed top-16 right-12 border shadow-lg rounded-md">
-      <h4>1 item added</h4>
-      <div>
-        <img
-          className="object-contain rounded-md w-20 h-20"
-          src={product.imageUrl}
-          alt={product.name}
-        />
-        <p className="font-medium text-center mb-2">{product.name}</p>
+    <div className="z-10 w-56 flex flex-col bg-white fixed top-16 right-4 md:right-12 border shadow-lg rounded-md text-sm p-6">
+      <h6 className="font-semibold text-center mb-4">1 item added</h6>
+      <div className="flex gap-5">
+        <div className="w-1/3">
+          <img
+            className="object-contain rounded-md"
+            src={product.imageUrl}
+            alt={product.name}
+          />
+        </div>
+        <div className="w-2/3 ml-auto flex flex-col items-start text-[8px]">
+          <span className="font-medium">{product.name}</span>
+          <span>£{product.price}</span>
+          <span>Size: Medium(M)</span>
+        </div>
       </div>
-      <button>Go to cart</button>
+      <button className="btn-cart py-1 my-2">Go to cart</button>
     </div>
   );
 };

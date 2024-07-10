@@ -30,3 +30,7 @@
 .btn-active {
     @apply bg-[#ff5f00]
 }
+
+.btn-cart {
+    @apply bg-[#F15025] text-white cursor-pointer;
+}
