@@ -6,7 +6,7 @@ const Success: React.FC = () => {
   const { cart, clearCart } = useCart();
 
   // Clear the cart
-  // clearCart();
+  clearCart();
 
   return (
     <section className="max-width my-6 md:my-12">
