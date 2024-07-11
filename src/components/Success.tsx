@@ -1,12 +1,16 @@
 import React from 'react';
 import { useCart } from '../context/cartContext';
 import PdfIcon from '../assets/icons/pdf.svg?react';
+import { useNavigate } from 'react-router-dom';
 
 const Success: React.FC = () => {
   const { cart, clearCart } = useCart();
+  const navigate = useNavigate();
 
-  // Clear the cart
-  clearCart();
+  const handleClearCart = () => {
+    clearCart();
+    navigate('/');
+  };
 
   return (
     <section className="max-width my-6 md:my-12">
@@ -54,8 +58,8 @@ const Success: React.FC = () => {
           <h2 className="font-semibold text-xl sm:text-4xl md:text-6xl text-center">
             Cart is empty
           </h2>
-          <p className="text-center">
-            <a href="/">Back to Homepage</a>
+          <p className="text-center" onClick={handleClearCart}>
+            Back to Homepage
           </p>
         </>
       )}
