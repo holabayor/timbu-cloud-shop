@@ -58,7 +58,7 @@ const Success: React.FC = () => {
               </div>
             </div>
           </div>
-          <p className="text-center" onClick={handleClearCart}>
+          <p className="text-center cursor-pointer" onClick={handleClearCart}>
             Back to Homepage
           </p>
         </>

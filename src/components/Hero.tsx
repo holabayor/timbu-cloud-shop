@@ -3,7 +3,7 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <section className="max-width">
-      <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row my-4 md:my-8">
         <div className="flex flex-col md:w-[60%] text-center max-sm:items-center sm:text-left  md:pr-4">
           <h1 className="font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-7xl lg:leading-none">
             Where <br className="hidden md:block" /> Fashion{' '}
