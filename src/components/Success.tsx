@@ -51,7 +51,7 @@ const Success: React.FC = () => {
             ))}
           </div>
           <div className="flex-1 py-4 px-8 rounded-md text-sm leading-loose">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 cursor-pointer">
               <PdfIcon width={20} height={20} onClick={handleClearCart} />
               <span>Download PDF</span>
             </div>
