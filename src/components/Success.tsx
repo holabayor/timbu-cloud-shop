@@ -58,7 +58,9 @@ const Success: React.FC = () => {
               </div>
             </div>
           </div>
-          <p className="text-center">Back to Homepage</p>
+          <p className="text-center" onClick={handleClearCart}>
+            Back to Homepage
+          </p>
         </>
       ) : (
         <>
