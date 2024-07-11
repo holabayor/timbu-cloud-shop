@@ -44,12 +44,16 @@ const Success: React.FC = () => {
                     <div className="mb-2">Size: Medium (M)</div>
                   </div>
                 </>
+                <p className="text-center" onClick={handleClearCart}>
+                  Back to Homepage
+                </p>
               </div>
             ))}
           </div>
           <div className="flex-1 py-4 px-8 rounded-md text-sm leading-loose">
             <div className="flex items-center gap-2">
-              <PdfIcon width={20} height={20} /> <span>Download PDF</span>
+              <PdfIcon width={20} height={20} onClick={handleClearCart} />
+              <span>Download PDF</span>
             </div>
           </div>
         </div>
@@ -58,9 +62,7 @@ const Success: React.FC = () => {
           <h2 className="font-semibold text-xl sm:text-4xl md:text-6xl text-center">
             Cart is empty
           </h2>
-          <p className="text-center" onClick={handleClearCart}>
-            Back to Homepage
-          </p>
+          <p className="text-center">Back to Homepage</p>
         </>
       )}
     </section>
